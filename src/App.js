@@ -1,24 +1,39 @@
 
 import './App.css';
-import { Button, Col, Container, Row } from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AnswerBox from './components/AnswerBox';
 import QuestionBox from './components/QuestionBox';
 import AnswerRows from './components/AnswerRows';
 import { QUESTIONS } from './app/shared/QUESTIONS';
+import ControlSidebar from './components/ControlSidebar';
+import { useState } from 'react';
 
 function App() {
+  console.log('Rendering App component');
+
+  // setup game status
+  const [questionIndex, setQuestionIndex] = useState(0);
+  console.log('questionIndex:', questionIndex);
+  console.log('QUESTIONS:', QUESTIONS);
+
   return (
     <div className="App" style={{ backgroundColor: '#522B29', height: '100vh' }}>
-      <Container >
-        <h1>What's Wrong Overlay v0.1</h1>
-        <Container >
-          <QuestionBox question={QUESTIONS[1]} />
-          {/* Ansers Frame */}
-          <Container className="my-3">
-            <AnswerRows answers={QUESTIONS[1].answersArray} />
-          </Container>
-        </Container>
+      <Container>
+        <Row >
+          <Col className='my-3'>
+            <QuestionBox question={QUESTIONS[questionIndex]} />
+            {/* Ansers Frame */}
+            <Container className="my-3">
+              <AnswerRows answers={QUESTIONS[questionIndex].answersArray} />
+            </Container>
+          </Col>
+          <Col className='col-1 my-3 mx-3'>
+            <ControlSidebar
+              questionIndex={questionIndex}
+              setQuestionIndex={setQuestionIndex} />
+          </Col>
+        </Row>
+
       </Container>
     </div >
   );
