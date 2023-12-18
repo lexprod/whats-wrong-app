@@ -1,14 +1,15 @@
 import React from "react";
 import { Container, Col } from 'reactstrap';
 
-const QuestionBox = () => {
+const QuestionBox = ({ question }) => {
     return (
-        <Container xs='12' style={{ backgroundColor: '#A06B9A', color: 'black' }}>
-            {/* Q Box */}
+        <Col className="d-flex align-items-center justify-content-center rounded-5" style={{
+            height: '40vh', backgroundColor: '#A06B9A', color: 'black', textAlign: 'center'
+        }}>
             <h2>
-                Lelush, a contestant on Tencent’s making the boy band show Produce Camp 2021, made it all the way to the finals despite what?
+                {question.qtext}
             </h2>
-        </Container>
+        </Col>
     );
 }
 
