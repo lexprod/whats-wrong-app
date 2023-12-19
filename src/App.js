@@ -13,8 +13,7 @@ function App() {
 
   // setup game status
   const [questionIndex, setQuestionIndex] = useState(0);
-  console.log('questionIndex:', questionIndex);
-  console.log('QUESTIONS:', QUESTIONS);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <div className="App" style={{ backgroundColor: '#522B29', height: '100vh' }}>
@@ -24,13 +23,14 @@ function App() {
             <QuestionBox question={QUESTIONS[questionIndex]} />
             {/* Ansers Frame */}
             <Container className="my-3">
-              <AnswerRows answers={QUESTIONS[questionIndex].answersArray} />
+              <AnswerRows answers={QUESTIONS[questionIndex].answersArray} selectedIndex={selectedIndex} />
             </Container>
           </Col>
           <Col className='col-1 my-3 mx-3'>
             <ControlSidebar
               questionIndex={questionIndex}
-              setQuestionIndex={setQuestionIndex} />
+              setQuestionIndex={setQuestionIndex}
+              setSelectedIndex={setSelectedIndex} />
           </Col>
         </Row>
 

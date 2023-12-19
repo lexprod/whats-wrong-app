@@ -72,5 +72,42 @@ export const QUESTIONS = [
                 text: 'porttitor rhoncus'
             }
         ]
-    }
+    },
+    {
+        id: 3,
+        qtext: 'But I must explain to you how all this mistaken idea of denouncing of a pleasure and praising pain was born and I will give you a complete account of the system?',
+        answersNum: 6,
+        answersArray: [
+            {
+                id: 0,
+                letter: 'A',
+                text: 'To take a trivial example.'
+            },
+            {
+                id: 1,
+                letter: 'B',
+                text: 'righteous indignation and dislike men.'
+            },
+            {
+                id: 2,
+                letter: 'C',
+                text: 'equal blame.'
+            },
+            {
+                id: 3,
+                letter: 'D',
+                text: 'what we like best.'
+            },
+            {
+                id: 4,
+                letter: 'E',
+                text: 'other greater pleasures.'
+            },
+            {
+                id: 5,
+                letter: 'F',
+                text: 'Sleepwalking every night.'
+            }
+        ]
+    },
 ];
