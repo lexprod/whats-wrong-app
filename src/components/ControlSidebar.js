@@ -12,6 +12,16 @@ const ControlSidebar = (props) => {
     const handleSelect = (index) => {
         props.setSelectedIndex(index);
     }
+    const handleReveal = (index) => {
+        let newReveals = [];
+        if (index === -1) {
+            newReveals = [false, false, false, false, false, false];
+        } else {
+            newReveals = [...props.revealedAnswerArray];
+            newReveals.fill(true, index, index + 1);
+        }
+        props.setRevealedAnswerArray(newReveals);
+    }
 
     return (
         <Container className="d-flex align-items-top justify-content-center rounded-1" style={{
@@ -53,7 +63,11 @@ const ControlSidebar = (props) => {
                         Highlight an answer:
                     </div>
                     {QUESTIONS[props.questionIndex].answersArray.map((answer, index) => (
-                        <Button className="col-3 mx-1 my-1" key={index} onClick={() => handleSelect(index)}>
+                        <Button className="col-3 mx-1 my-1"
+                            key={index}
+                            onClick={() => handleSelect(index)}
+                            disabled={index === props.selectedIndex}
+                        >
                             {answer.letter}
                         </Button>
                     ))}
@@ -62,6 +76,25 @@ const ControlSidebar = (props) => {
                     </Button>
                 </Container>
 
+
+                {/* answer revealer */}
+                <Container className="my-2">
+                    <div>
+                        Reveal an answer:
+                    </div>
+                    {QUESTIONS[props.questionIndex].answersArray.map((answer, index) => (
+                        <Button className="col-3 mx-1 my-1"
+                            key={index}
+                            onClick={() => handleReveal(index)}
+                            disabled={props.revealedAnswerArray[index]}
+                        >
+                            {answer.letter}
+                        </Button>
+                    ))}
+                    <Button className="m-1" onClick={() => handleReveal(-1)}>
+                        Clear Reveals
+                    </Button>
+                </Container>
 
 
             </Col>

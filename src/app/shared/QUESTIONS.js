@@ -3,6 +3,7 @@ export const QUESTIONS = [
         id: 1,
         qtext: 'Lelush, a contestant on Tencent’s making the boy band show Produce Camp 2021, made it all the way to the finals despite what?',
         answersNum: 6,
+        correctIndex: 0,
         answersArray: [
             {
                 id: 0,
@@ -40,6 +41,7 @@ export const QUESTIONS = [
         id: 2,
         qtext: 'Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam?',
         answersNum: 6,
+        correctIndex: 5,
         answersArray: [
             {
                 id: 0,
@@ -77,6 +79,7 @@ export const QUESTIONS = [
         id: 3,
         qtext: 'But I must explain to you how all this mistaken idea of denouncing of a pleasure and praising pain was born and I will give you a complete account of the system?',
         answersNum: 6,
+        correctIndex: 2,
         answersArray: [
             {
                 id: 0,
