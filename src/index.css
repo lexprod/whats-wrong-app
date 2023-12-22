@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'BlackHan';
+  src: url(../public/assets/BlackHanSans-Regular.ttf);
+}
+
+.big-letter {
+  font-family: BlackHan;
+  font-size: xx-large;
+}

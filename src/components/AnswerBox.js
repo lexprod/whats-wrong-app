@@ -43,10 +43,10 @@ const AnswerBox = (props) => {
     return (
         // default version
         <>
-            <Col className="d-flex align-items-center justify-content-center" style={{
-                marginLeft: 20,
-                marginTop: 20,
-                marginBottom: 20,
+            <Col className="d-flex align-items-center justify-content-center big-letter" style={{
+                marginLeft: 10,
+                marginTop: 15,
+                marginBottom: 15,
                 height: '20vh',
                 backgroundColor: currentColors.letterBox,
                 color: currentColors.letterText,
@@ -55,14 +55,14 @@ const AnswerBox = (props) => {
                 borderTopRightRadius: 0,
                 borderBottomLeftRadius: 50,
                 borderBottomRightRadius: 0,
-                paddingLeft: 15
+                paddingLeft: 15,
             }}>
-                <h3>{props.letterString}</h3>
+                <h1>{props.letterString}</h1>
             </Col>
             <Col className=" col-3 d-flex align-items-center justify-content-center" style={{
                 marginRight: 20,
-                marginTop: 20,
-                marginBottom: 20,
+                marginTop: 15,
+                marginBottom: 15,
                 backgroundColor: currentColors.answerBox,
                 color: currentColors.answerText,
                 height: '20vh',
