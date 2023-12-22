@@ -27,57 +27,26 @@ const AnswerBox = (props) => {
             answerText: '#2d3436',
             answerBox: '#55efc4'
         }
-    }
+    };
+    let currentColors = colors.plainColors;
 
-    // TODO: implement all color palettes, then just have the if/switch statement change the activeColors object appropriately
     if (!props.isCorrect & props.revealed) {
-        return (
-            // wrong reveal version
-            <>
-                <Col className="my-3 mx-1 rounded-4 d-flex align-items-center justify-content-center" style={{ backgroundColor: colors.wrongColors.letterBox, color: colors.wrongColors.letterText, height: '20vh', textAlign: 'center' }}>
-                    <h3>{props.letterString}</h3>
-                </Col>
-                <Col className="my-3 mx-3 rounded-4 col-3 d-flex align-items-center justify-content-center" style={{ backgroundColor: colors.wrongColors.answerBox, color: colors.wrongColors.answerText, height: '20vh', textAlign: 'center' }}>
-                    <h3 className="mx-3">{props.answerString}</h3>
-                </Col>
-            </>
-        );
+        currentColors = colors.wrongColors;
     }
     if (props.isCorrect & props.revealed) {
-        return (
-            // correct reveal version
-            <>
-                <Col className="my-3 mx-1 rounded-4 d-flex align-items-center justify-content-center" style={{ backgroundColor: colors.correctColors.letterBox, color: colors.correctColors.letterText, height: '20vh', textAlign: 'center' }}>
-                    <h3>{props.letterString}</h3>
-                </Col>
-                <Col className="my-3 mx-3 rounded-4 col-3 d-flex align-items-center justify-content-center" style={{ backgroundColor: colors.correctColors.answerBox, color: colors.correctColors.answerText, height: '20vh', textAlign: 'center' }}>
-                    <h3 className="mx-3">{props.answerString}</h3>
-                </Col>
-            </>
-        );
+        currentColors = colors.correctColors;
     }
-
-    if (props.selected) {
-        return (
-            // highlighted selection version
-            <>
-                <Col className="my-3 mx-1 rounded-4 d-flex align-items-center justify-content-center" style={{ backgroundColor: colors.selectColors.letterBox, color: colors.selectColors.letterText, height: '20vh', textAlign: 'center' }}>
-                    <h3>{props.letterString}</h3>
-                </Col>
-                <Col className="my-3 mx-3 rounded-4 col-3 d-flex align-items-center justify-content-center" style={{ backgroundColor: colors.selectColors.answerBox, color: colors.selectColors.answerText, height: '20vh', textAlign: 'center' }}>
-                    <h3 className="mx-3">{props.answerString}</h3>
-                </Col>
-            </>
-        );
+    if (props.selected & !props.revealed) {
+        currentColors = colors.selectColors;
     }
 
     return (
-        // not highlighted selection version
+        // default version
         <>
-            <Col className="my-3 mx-1 rounded-4 d-flex align-items-center justify-content-center" style={{ backgroundColor: colors.plainColors.letterBox, color: colors.plainColors.letterText, height: '20vh', textAlign: 'center' }}>
+            <Col className="my-3 mx-1 rounded-4 d-flex align-items-center justify-content-center" style={{ backgroundColor: currentColors.letterBox, color: currentColors.letterText, height: '20vh', textAlign: 'center' }}>
                 <h3>{props.letterString}</h3>
             </Col>
-            <Col className="my-3 mx-3 rounded-4 col-3 d-flex align-items-center justify-content-center" style={{ backgroundColor: colors.plainColors.answerBox, color: colors.plainColors.answerText, height: '20vh', textAlign: 'center' }}>
+            <Col className="my-3 mx-3 rounded-4 col-3 d-flex align-items-center justify-content-center" style={{ backgroundColor: currentColors.answerBox, color: currentColors.answerText, height: '20vh', textAlign: 'center' }}>
                 <h3 className="mx-3">{props.answerString}</h3>
             </Col>
         </>
