@@ -43,11 +43,37 @@ const AnswerBox = (props) => {
     return (
         // default version
         <>
-            <Col className="my-3 mx-1 rounded-4 d-flex align-items-center justify-content-center" style={{ backgroundColor: currentColors.letterBox, color: currentColors.letterText, height: '20vh', textAlign: 'center' }}>
+            <Col className="d-flex align-items-center justify-content-center" style={{
+                marginLeft: 20,
+                marginTop: 20,
+                marginBottom: 20,
+                height: '20vh',
+                backgroundColor: currentColors.letterBox,
+                color: currentColors.letterText,
+                textAlign: 'center',
+                borderTopLeftRadius: 50,
+                borderTopRightRadius: 0,
+                borderBottomLeftRadius: 50,
+                borderBottomRightRadius: 0,
+                paddingLeft: 15
+            }}>
                 <h3>{props.letterString}</h3>
             </Col>
-            <Col className="my-3 mx-3 rounded-4 col-3 d-flex align-items-center justify-content-center" style={{ backgroundColor: currentColors.answerBox, color: currentColors.answerText, height: '20vh', textAlign: 'center' }}>
-                <h3 className="mx-3">{props.answerString}</h3>
+            <Col className=" col-3 d-flex align-items-center justify-content-center" style={{
+                marginRight: 20,
+                marginTop: 20,
+                marginBottom: 20,
+                backgroundColor: currentColors.answerBox,
+                color: currentColors.answerText,
+                height: '20vh',
+                textAlign: 'center',
+                borderTopLeftRadius: 0,
+                borderTopRightRadius: 50,
+                borderBottomLeftRadius: 0,
+                borderBottomRightRadius: 50,
+                paddingRight: 20
+            }}>
+                <h3 className="mx-1">{props.answerString}</h3>
             </Col>
         </>
 
