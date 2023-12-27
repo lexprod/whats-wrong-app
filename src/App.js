@@ -8,7 +8,7 @@ import { QUESTIONS } from './app/shared/QUESTIONS';
 import ControlSidebar from './components/ControlSidebar';
 import { useState, useEffect } from 'react';
 
-const startingRevealValues = [true, true, false, false, true, false];
+const startingRevealValues = [false, false, false, false, false, false];
 
 function App() {
   console.log('Rendering App component');

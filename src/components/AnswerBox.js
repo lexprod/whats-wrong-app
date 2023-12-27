@@ -1,5 +1,6 @@
 import React from "react";
 import { Col } from 'reactstrap';
+import { motion } from "framer-motion"
 
 const AnswerBox = (props) => {
     let colors = {

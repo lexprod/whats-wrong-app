@@ -7,6 +7,9 @@ const ControlSidebar = (props) => {
         props.setQuestionIndex(Math.max((props.questionIndex - 1), 0));
     }
     const handleNext = () => {
+        //clear selects and reveals
+        handleReveal(-1);
+        handleSelect(-1);
         props.setQuestionIndex(Math.min((props.questionIndex + 1), (QUESTIONS.length - 1)));
     }
     const handleSelect = (index) => {
