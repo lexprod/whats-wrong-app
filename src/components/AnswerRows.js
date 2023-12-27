@@ -6,7 +6,8 @@ const AnswerRows = ({ answers, selectedIndex, correctIndex, revealedAnswerArray 
     return (
         <>
             <Row>
-                <AnswerBox letterString='A'
+                <AnswerBox
+                    letterString='A'
                     answerString={answers[0].text}
                     isCorrect={(correctIndex === answers[0].id)}
                     selected={(selectedIndex === 0)}

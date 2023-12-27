@@ -1,6 +1,5 @@
 import React from "react";
 import { Col } from 'reactstrap';
-import { motion } from "framer-motion"
 
 const AnswerBox = (props) => {
     let colors = {
@@ -44,7 +43,7 @@ const AnswerBox = (props) => {
     return (
         // default version
         <>
-            <Col className="d-flex align-items-center justify-content-center big-letter" style={{
+            <Col className="d-flex align-items-center justify-content-center big-letter answer-box" style={{
                 marginLeft: 10,
                 marginTop: 15,
                 marginBottom: 15,
@@ -60,7 +59,7 @@ const AnswerBox = (props) => {
             }}>
                 <h1>{props.letterString}</h1>
             </Col>
-            <Col className=" col-3 d-flex align-items-center justify-content-center" style={{
+            <Col className=" col-3 d-flex align-items-center justify-content-center answer-box" style={{
                 marginRight: 20,
                 marginTop: 15,
                 marginBottom: 15,
