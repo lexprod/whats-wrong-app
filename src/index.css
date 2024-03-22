@@ -23,10 +23,10 @@ code {
 }
 
 .answer-box:hover {
-  opacity: 0.8;
-  /* Change the opacity  */
-  transform: scaleY(0);
+  /* opacity: 0.8; */
+  /* Change the opacity 
+  transform: scaleY(0); */
   /* Scale up  */
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* transition: opacity 0.3s ease, transform 0.3s ease; */
   /* Transition properties */
 }
