@@ -2,6 +2,7 @@ import React from "react";
 import { Col } from 'reactstrap';
 
 const AnswerBox = (props) => {
+    //answer box styling
     let colors = {
         plainColors: {
             letterText: '#2d3436',
@@ -13,7 +14,8 @@ const AnswerBox = (props) => {
             letterText: '#2d3436',
             letterBox: '#fdcb6e',
             answerText: '#2d3436',
-            answerBox: '#ffeaa7'
+            answerBox: '#ffeaa7',
+            answerBorder: '#ffeaa7',
         },
         wrongColors: {
             letterText: '#2d3436',
