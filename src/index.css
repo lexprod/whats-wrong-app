@@ -19,7 +19,12 @@ code {
 
 .big-letter {
   font-family: BlackHan;
-  font-size: xx-large;
+  font-size: 2rem;
+}
+
+.bigger-letter {
+  font-family: BlackHan;
+  font-size: 5rem;
 }
 
 .answer-box:hover {

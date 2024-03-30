@@ -1,22 +1,22 @@
-
-import './App.css';
-import { Col, Container, Row } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import QuestionBox from './components/QuestionBox';
-import AnswerRows from './components/AnswerRows';
-import { QUESTIONS } from './app/shared/QUESTIONS';
-import ControlSidebar from './components/ControlSidebar';
-import { useState, useEffect } from 'react';
+import "./App.css";
+import { Col, Container, Row } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import QuestionBox from "./components/QuestionBox";
+import AnswerRows from "./components/AnswerRows";
+import { QUESTIONS } from "./app/shared/QUESTIONS";
+import ControlSidebar from "./components/ControlSidebar";
+import { useState, useEffect } from "react";
 
 const startingRevealValues = [false, false, false, false, false, false];
 
 function App() {
-  console.log('Rendering App component');
+  console.log("Rendering App component");
 
   // setup game status
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  const [revealedAnswerArray, setRevealedAnswerArray] = useState(startingRevealValues);
+  const [revealedAnswerArray, setRevealedAnswerArray] =
+    useState(startingRevealValues);
 
   // // Log the array when it changes
   // useEffect(() => {
@@ -24,10 +24,13 @@ function App() {
   // }, [revealedAnswerArray]);
 
   return (
-    <div className="App" style={{ backgroundColor: '#522B29', height: '100vh' }}>
+    <div
+      className="App"
+      style={{ backgroundColor: "#522B29", height: "100vh" }}
+    >
       <Container>
-        <Row >
-          <Col className='my-3'>
+        <Row>
+          <Col className="my-3">
             <QuestionBox question={QUESTIONS[questionIndex]} />
             {/* Ansers Frame */}
             <Container className="my-3">
@@ -36,10 +39,11 @@ function App() {
                 selectedIndex={selectedIndex}
                 correctIndex={QUESTIONS[questionIndex].correctIndex}
                 revealedAnswerArray={revealedAnswerArray}
+                answersNum={QUESTIONS[questionIndex].answersNum}
               />
             </Container>
           </Col>
-          <Col className='col-1 my-3 mx-3'>
+          <Col className="col-1 my-3 mx-3">
             <ControlSidebar
               questionIndex={questionIndex}
               setQuestionIndex={setQuestionIndex}
@@ -50,9 +54,8 @@ function App() {
             />
           </Col>
         </Row>
-
       </Container>
-    </div >
+    </div>
   );
 }
 
