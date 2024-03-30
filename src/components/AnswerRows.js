@@ -106,7 +106,7 @@ const AnswerRows = ({
   if (answersNum == 3) {
     return (
       <>
-        <Row>
+        <Row className="align-self-center">
           <AnswerBox
             letterString="A"
             answerString={answers[0].text}
