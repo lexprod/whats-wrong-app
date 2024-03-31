@@ -1,8 +1,12 @@
 import React from "react";
-import { Container, Col, Row, Button } from "reactstrap";
+import { Container, Col, Row, Button, Collapse } from "reactstrap";
 import { QUESTIONS } from "../app/shared/QUESTIONS";
+import { useState, useEffect } from "react";
 
 const ControlSidebar = (props) => {
+  // toggle state
+  const [revealToggle, setRevealToggle] = useState(false);
+
   const handlePrevious = () => {
     props.setQuestionIndex(Math.max(props.questionIndex - 1, 0));
   };
@@ -17,6 +21,10 @@ const ControlSidebar = (props) => {
   const handleSelect = (index) => {
     props.setSelectedIndex(index);
   };
+
+  const handleRevealToggle = () => {
+    setRevealToggle(!revealToggle);
+  };
   const handleReveal = (index) => {
     let newReveals = [];
     if (index === -1) {
@@ -26,13 +34,13 @@ const ControlSidebar = (props) => {
       newReveals.fill(true, index, index + 1);
     }
     props.setRevealedAnswerArray(newReveals);
+    setRevealToggle(false);
   };
 
   return (
     <Container
       className="d-flex align-items-top justify-content-center rounded-1"
       style={{
-        height: "80vh",
         width: 300,
         backgroundColor: "#2d3436",
         color: "white",
@@ -84,21 +92,30 @@ const ControlSidebar = (props) => {
         </Container>
 
         {/* answer revealer */}
+
         <Container className="my-2">
-          <div>Reveal an answer:</div>
-          {QUESTIONS[props.questionIndex].answersArray.map((answer, index) => (
-            <Button
-              className="col-3 mx-1 my-1"
-              key={index}
-              onClick={() => handleReveal(index)}
-              disabled={props.revealedAnswerArray[index]}
-            >
-              {answer.letter}
-            </Button>
-          ))}
-          <Button className="m-1" onClick={() => handleReveal(-1)}>
-            Clear Reveals
+          {/* reveal toggle  */}
+          <Button color="warning" onClick={() => handleRevealToggle()}>
+            Toggle Reveals
           </Button>
+          <Collapse isOpen={revealToggle}>
+            <div>Reveal an answer:</div>
+            {QUESTIONS[props.questionIndex].answersArray.map(
+              (answer, index) => (
+                <Button
+                  className="col-3 mx-1 my-1"
+                  key={index}
+                  onClick={() => handleReveal(index)}
+                  disabled={props.revealedAnswerArray[index]}
+                >
+                  {answer.letter}
+                </Button>
+              )
+            )}
+            <Button className="m-1" onClick={() => handleReveal(-1)}>
+              Clear Reveals
+            </Button>
+          </Collapse>
         </Container>
       </Col>
     </Container>

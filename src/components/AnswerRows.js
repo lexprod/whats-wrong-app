@@ -106,7 +106,14 @@ const AnswerRows = ({
   if (answersNum == 3) {
     return (
       <>
-        <Row className="align-self-center">
+        {/* filler row */}
+        <Row
+          className="flex"
+          style={{
+            height: "10vh",
+          }}
+        ></Row>
+        <Row className="flex">
           <AnswerBox
             letterString="A"
             answerString={answers[0].text}
