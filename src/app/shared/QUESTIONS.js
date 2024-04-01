@@ -2,39 +2,39 @@ export const QUESTIONS = [
   {
     id: 1,
     qtext:
-      "Lelush, a contestant on Tencent’s making the boy band show Produce Camp 2021, made it all the way to the finals despite what?",
+      "Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam? Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam??",
     answersNum: 6,
-    correctIndex: 0,
+    correctIndex: 4,
     answersArray: [
       {
         id: 0,
         letter: "A",
-        text: "Asking to be votted out of the show.",
+        text: "Morbi quis commodo of the show.",
       },
       {
         id: 1,
         letter: "B",
-        text: "Being a dog.",
+        text: "Being a Morbi quis commodo.",
       },
       {
         id: 2,
         letter: "C",
-        text: "Wearing his clothes backwaresd.",
+        text: "Wearing hiMorbi quis commodoaresd.",
       },
       {
         id: 3,
         letter: "D",
-        text: "Having no toes.",
+        text: "Morbi quis commodo toes.",
       },
       {
         id: 4,
         letter: "E",
-        text: "Being over 80 years old.",
+        text: "Being Morbi quis commodo.",
       },
       {
         id: 5,
         letter: "F",
-        text: "Sleepwalking every night.",
+        text: "Morbi quis commodonight.",
       },
     ],
   },
