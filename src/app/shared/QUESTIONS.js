@@ -1,8 +1,7 @@
 export const QUESTIONS = [
   {
     id: 1,
-    qtext:
-      "In Taiwan, you’re allowed to change your name up to three times, but in March 2021 a government administrator asked people to stop changing their names to what?",
+    qtext: "",
     answersNum: 3,
     correctIndex: 1,
     answersArray: [
